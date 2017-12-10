@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>Debate Square</title>
+{% endblock %}
+
+{% block body %}
+<h2> WELCOME Debaters! </h2>
+
+<div class='panel'>
+  <p>
+    Here will be a topic and debaters are welcome to express their sides of the story...
+  </p>
+</div>
+
+
+
+<h4>Hurray!Your thoughts?</h4>
+
+<p>
+  You can express your views here, or see messages people have said <a href="{{ url_for('messages') }}">here</a>
+</p>
+
+<div class="large-8 columns">
+<form action="/submit_message" method="post">
+  <input type="text" placeholder="Name" name="who">
+  <textarea placeholder="Enter your message here" name="message" cols="50" rows="4"></textarea>
+  <input type="submit" value="Submit">
+</form>
+</div>
+{% endblock %}
